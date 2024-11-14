@@ -1,6 +1,7 @@
 package com.devruan.listgames.dto;
 
 import com.devruan.listgames.entities.Game;
+import com.devruan.listgames.projections.GameMinProjection;
 
 public class GameMinDTO {
     private Long id;
@@ -16,7 +17,13 @@ public class GameMinDTO {
         imgUrl = entity.getImgUrl();
         shortDescription = entity.getShortDescription();
     }
-
+    public GameMinDTO(GameMinProjection gameMinProjection){
+        id = gameMinProjection.getId();
+        title = gameMinProjection.getTitle();
+        year = gameMinProjection.getYear();
+        imgUrl = gameMinProjection.getImgUrl();
+        shortDescription = gameMinProjection.getShortDescription();
+    }
     public Long getId() {
         return id;
     }
