@@ -5,6 +5,7 @@ import com.devruan.listgames.dto.GameListDTO;
 import com.devruan.listgames.dto.GameMinDTO;
 import com.devruan.listgames.entities.Game;
 import com.devruan.listgames.entities.GameList;
+import com.devruan.listgames.mapper.GameListMapper;
 import com.devruan.listgames.projections.GameMinProjection;
 import com.devruan.listgames.repositorys.GameListRepository;
 import com.devruan.listgames.repositorys.GameRepository;
@@ -20,6 +21,8 @@ public class GameListService {
     private GameListRepository gameListRepository;
     @Autowired
     private GameRepository gameRepository;
+    @Autowired
+    private GameListMapper gameListMapper;
     @Transactional(readOnly = true)
     public List<GameListDTO> findAll() {
         return gameListRepository.findAll().stream().map(GameListDTO::new).toList();
@@ -37,5 +40,11 @@ public class GameListService {
         for (int i = min; i <= max; i++) {
             gameListRepository.updateBelongingPosition(listId, list.get(i).getId(), i);
         }
+    }
+
+    @Transactional
+    public GameListDTO save(GameListDTO gameListDTO){
+        GameList gameListsaved = gameListRepository.save(gameListMapper.toGameList(gameListDTO));
+        return new GameListDTO(gameListsaved);
     }
 }

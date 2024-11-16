@@ -31,4 +31,9 @@ public class GameListController {
     public void move(@PathVariable Long listId, @RequestBody ReplacementDTO body) {
         gameListService.move(listId, body.getSourceIndex(), body.getDestinationIndex());
     }
+
+    @PostMapping
+    public GameListDTO save(@RequestBody GameListDTO gameListDTO){
+        return gameListService.save(gameListDTO);
+    }
 }
