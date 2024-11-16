@@ -1,6 +1,7 @@
 package com.devruan.listgames.entities;
 
 import jakarta.persistence.*;
+import lombok.NoArgsConstructor;
 
 import java.util.Objects;
 @Entity
