@@ -2,6 +2,7 @@ package com.devruan.listgames.controllers;
 
 import com.devruan.listgames.dto.GameDTO;
 import com.devruan.listgames.dto.GameMinDTO;
+import com.devruan.listgames.services.GameListService;
 import com.devruan.listgames.services.GameService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.*;

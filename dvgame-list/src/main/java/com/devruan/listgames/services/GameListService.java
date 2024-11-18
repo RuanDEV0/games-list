@@ -1,9 +1,6 @@
 package com.devruan.listgames.services;
 
-import com.devruan.listgames.dto.GameDTO;
 import com.devruan.listgames.dto.GameListDTO;
-import com.devruan.listgames.dto.GameMinDTO;
-import com.devruan.listgames.entities.Game;
 import com.devruan.listgames.entities.GameList;
 import com.devruan.listgames.mapper.GameListMapper;
 import com.devruan.listgames.projections.GameMinProjection;
@@ -29,13 +26,16 @@ public class GameListService {
     }
 
     @Transactional
-    public void move(Long listId, int sourceIndex, int destinationIndex){
+    public void moveGameInList(Long listId, int sourceIndex, int destinationIndex){
         List<GameMinProjection> list = gameRepository.searchByList(listId);
         GameMinProjection obj = list.remove(sourceIndex);
         list.add(destinationIndex, obj);
-
-        int min = sourceIndex < destinationIndex ? sourceIndex : destinationIndex;
-        int max = sourceIndex < destinationIndex ? destinationIndex : sourceIndex;
+        toUpdateGameMoveListInDataBase(list, listId, sourceIndex, destinationIndex);
+    }
+    @Transactional
+    void toUpdateGameMoveListInDataBase(List<GameMinProjection> list, Long listId, int sourceIndex, int destinationIndex){
+        int min = Math.min(sourceIndex, destinationIndex);
+        int max = Math.max(sourceIndex, destinationIndex);
 
         for (int i = min; i <= max; i++) {
             gameListRepository.updateBelongingPosition(listId, list.get(i).getId(), i);
