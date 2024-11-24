@@ -1,6 +1,6 @@
 # game-management-system (Sistema de Gerenciamento de Games)
 
-Um sistema de gerenciamento de games, permitindo que os usuários gerencie os games e as listas de games de forma eficiente.
+Um sistema de gerenciamento de games, permitindo que os usuários gerencie os games e relacionar com tipos de games de forma eficiente.
 
 ## Funcionalidades
 
