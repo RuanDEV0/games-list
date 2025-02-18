@@ -1,50 +1,68 @@
-# game-management-system (Sistema de Gerenciamento de Games)
+# 🎮 Sistema de Gerenciamento de Games
 
-Um sistema de gerenciamento de games, permitindo que os usuários gerencie os games e relacionar com tipos de games de forma eficiente.
+O **Sistema de Gerenciamento de Games** é uma solução desenvolvido para fixaçaõ do estudo do framework *SPRING BOOT*, na qual resultou em um sistema eficiente para organizar e gerenciar coleções de jogos. 
 
-## Funcionalidades
+---
 
-- Adicionar game e lista.
-- Visualização de game e lista.
-- Mover posições de games dentro de uma lista.
+## ✨ Funcionalidades Principais
 
-## Tecnologias Usadas
+- **Adicionar games ou listas**.
+- **Visualização de gamesss ou listas**.
+- **Mover posições de games dentro de uma lista**.
 
-- Java
-- Spring 
-- PostgreSQL
+---
 
-## Instalação
+## 🛠️ Tecnologias Utilizadas
 
-1. Clone o repositório:
+- **Java**: Linguagem principal para desenvolvimento back-end.
+- **Spring Framework**: Facilita o desenvolvimento rápido com suporte e gerenciamento de classes.
+- **PostgreSQL**: Banco de dados relacional para armazenamento de dados.
+
+---
+
+## �️ Instalação e Configuração
+
+Siga os passos abaixo para configurar e executar o projeto em seu ambiente local:
+
+1. **Clone o repositório**:
     ```bash
     git clone https://github.com/RuanDEV0/games-list.git
     ```
 
-2. Navegue até o diretório do projeto:
+2. **Navegue até o diretório do projeto**:
     ```bash
     cd games-list
     ```
 
-3. Configure o banco de dados e as propriedades necessárias.
+3. **Configure o banco de dados**:
+    - Crie um banco de dados PostgreSQL.
+    - Atualize o arquivo `application.properties` com as credenciais e configurações do banco de dados.
 
-4. Execute a aplicação:
+4. **Execute a aplicação**:
     ```bash
     ./mvnw spring-boot:run
     ```
 
-## Uso
+5. **Acesse a aplicação**:
+    - Abra seu navegador e acesse `http://localhost:8080` para começar a usar o sistema.
 
-Após iniciar o aplicativo, acesse `http://localhost:8080` em seu navegador para começar interagir com a aplicação.
+---
 
-## Contribuição
+## 🤝 Como Contribuir
 
-Se você deseja contribuir para o projeto, siga estas etapas:
-1. Faça um fork do repositório.
-2. Crie uma branch para suas alterações.
-3. Submeta um pull request.
+Contribuições são bem-vindas! Se você deseja colaborar com o projeto, siga estas etapas:
 
-## Licença
+1. **Faça um fork do repositório**.
+2. **Crie uma branch** para suas alterações:
+    ```bash
+    git checkout -b feature/nova-funcionalidade
+    ```
+3. **Envie suas alterações**:
+    ```bash
+    git push origin feature/nova-funcionalidade
+    ```
+4. **Abra um Pull Request** no repositório original, descrevendo as mudanças propostas.
 
-Este projeto é licenciado sob a Licença MIT - consulte o arquivo [LICENSE](LICENSE) para mais detalhes.
+---
 
+ 🚀
